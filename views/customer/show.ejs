@@ -3,23 +3,23 @@
 <h3>State: <%= customer.state %></h3>
 <hr>
 <h3>Stocks</h3>
-<table>
+<table class="table table-bordered">
     <tr>
         <th>Symbol</th>
         <th>Number of shares</th>
         <th>Current Price</th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th>View</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
     <% _.each(customer.stocks, function (stock) { %>
     <tr data-id="<%= stock.id %>" data-model="stock">
         <td><%= stock.symbol %></td>
         <td><%= stock.number_of_shares %></td>
         <td></td>
-        <td><a href="/stock/show/<%= stock.id %>">Show</a></td>
-        <td><a href="/stock/edit/<%= stock.id %>">Edit</a></td>
-        <td><a href="/stock/destroy/<%= stock.id %>">Delete</a></td>
+        <td><a href="/stock/show/<%= stock.id %>" class="btn btn-info">Show</a></td>
+        <td><a href="/stock/edit/<%= stock.id %>" class="btn btn-warning">Edit</a></td>
+        <td><a href="/stock/destroy/<%= stock.id %>" class="btn btn-danger">Delete</a></td>
     </tr>
     <% })%>
 </table>
